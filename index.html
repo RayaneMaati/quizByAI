@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizByAI</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        <h1>QuizByAI</h1>
+
+        <ul>
+            <li onclick="window.location.href = '#quizSection'">Take a Quiz</li>
+            <li onclick="window.location.href = '#faq'">F.A.Q</li>
+            <li onclick="window.location.href = '#MeetTheFounder'">Meet The Founder</li>
+        </ul>
+    </nav>
+
+    <div>
+        <div class="hero">
+            <img src="icons/brain.svg" alt="Brain">
+            <div class="headLine">Empower Your Brain with AI-Powered Quizzes.</div>
+            <div class="subHeadline">Test. Learn. Grow. The AI Way.</div>
+            <button onclick="window.location.href = '#quizSection'">Try an AI-powered quiz</button>
+
+            <div class="quote">
+                Live as if you were to die tomorrow. Learn as if you were to live forever. – Mahatma Gandhi
+            </div>
+        </div>
+
+        <div id="quizSection">
+            <div class="levels">
+                <div class="level easy level-selected">
+                    Easy
+                </div>
+
+                <div class="level medium">
+                    Medium
+                </div>
+
+                <div class="level hard">
+                    Hard
+                </div>
+            </div>
+
+            <div class="recommanded">
+                <div class="title">Recommanded Topics :</div>
+                <div class="cards">
+                    <div class="topicCard" onclick="fillTopic(0)">
+                        <img src="icons/py.svg" alt="python" class="icon">
+                        <div>PYTHON</div>
+                    </div>
+
+                    <div class="topicCard" onclick="fillTopic(1)">
+                        <img src="icons/math.svg" alt="python" class="icon">
+                        <div>Mathematics</div>
+                    </div>
+
+                    <div class="topicCard" onclick="fillTopic(2)">
+                        <img src="icons/physics.svg" alt="python" class="icon">
+                        <div>Physics</div>
+                    </div>
+
+                    <div class="topicCard" onclick="fillTopic(3)">
+                        <img src="icons/chemistry.svg" alt="python" class="icon">
+                        <div>Chemistry</div>
+                    </div>
+
+                    <div class="topicCard" onclick="fillTopic(4)">
+                        <img src="icons/art.svg" alt="python" class="icon">
+                        <div>Art</div>
+                    </div>
+                    
+                    <div class="topicCard" onclick="fillTopic(5)">
+                        <img src="icons/law.svg" alt="python" class="icon">
+                        <div>Law</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="topic">
+                <h2>Pick the subject you'd like to study :</h2>
+                <input type="text" placeholder="Choose your topic ...">
+                <button class="generateBtn" onclick="showQuiz()">Generate</button>
+            </div>
+
+            <div id="quizBoxSection" class="quizBoxSection">
+            <div id="quizWrapper" class="quizWrapper">
+                <div class="quizLoad">
+                    <div style="font-weight: 700;">YOUR QUIZ IS COMING TO LIFE...<br> HANG TIGHT!</div>
+                    <img src="icons/i.gif"/>
+                </div>
+                <div class="quizContainer">
+                    <div class="title">Quiz Time !</div>
+                    <div class="timer">Time spent: <span class="timerCount">0</span>s</div>
+                    <div class="quizContent">
+                        <div class="questionHolder">Question: What is the correct syntax to output "Hello World" in Python?
+<br>
+                            A) echo("Hello World");
+                            B) print("Hello World")
+                            C) output("Hello World")
+                            D) write("Hello World")
+                        </div>
+                    </div>
+
+                    <div class="quizChoices">
+                        <div class="choice" data-value="a" onclick="checkAnswer(0)">A</div>
+                        <div class="choice" data-value="b" onclick="checkAnswer(1)">B</div>
+                        <div class="choice" data-value="c" onclick="checkAnswer(2)">C</div>
+                        <div class="choice" data-value="d" onclick="checkAnswer(3)">D</div>
+                        <div class="retry"><img src="icons/retry.svg" alt="Generate again"></div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="faq">
+        <h1>Frequenty Asked Questions</h1>
+
+        <div class="faqItem" onclick="toggleFaq(0)">
+            <div class="questionPart">
+                <p class="faqQuestion">What is this app?</p>
+                <img src="icons/plus.svg"/>
+            </div>
+            <div class="answer" style="display: none;">
+                This app is a tool designed to help students prepare for exams by generating AI-powered quizzes based on the topics they want to study.
+            </div>
+        </div>
+
+        <div class="faqItem" onclick="toggleFaq(1)" >
+            <div class="questionPart">
+                <p class="faqQuestion">How does the app generate quizzes?</p>
+                <img src="icons/plus.svg"/>
+            </div>
+            <div class="answer" style="display: none;">
+                The app uses advanced artificial intelligence to analyze the topics you input and create questions that test your understanding of those subjects. These questions can include multiple-choice, true/false, short answer, and more.
+            </div>
+        </div>
+
+        <div class="faqItem" onclick="toggleFaq(2)">
+            <div class="questionPart">
+                <p class="faqQuestion">Is the app free to use?</p>
+                <img src="icons/plus.svg"/>
+            </div>
+            <div class="answer" style="display: none;">
+                The app is currently free to use, but some premium features may be introduced in the future.
+            </div>
+        </div>
+
+        <div class="faqItem" onclick="toggleFaq(3)">
+            <div class="questionPart">
+                <p class="faqQuestion">What types of questions does the app support?</p>
+                <img src="icons/plus.svg"/>
+            </div>
+            <div class="answer" style="display: none;">
+                The app supports multiple-choice questions, true/false, short answer.
+            </div>
+        </div>
+
+        <div class="faqItem" onclick="toggleFaq(4)">
+            <div class="questionPart">
+                <p class="faqQuestion">I found an error in a quiz question. What should I do?</p>
+                <img src="icons/plus.svg"/>
+            </div>
+            <div class="answer" style="display: none;">
+                If you notice an error, you can try generating the quiz again as sometimes the AI-generated content may be unexpected.
+            </div>
+        </div>
+    </div>
+
+    <div id="MeetTheFounder" class="aboutMe">
+        <img src="icons/persoImg.jpg" alt="The_Coder">
+        <div class="myName">
+            <div class="title">I'm Rayane Maati</div>
+            <img src="icons/linkedin.svg" alt="linkedin" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/rayane-maati-36093720b/'">
+            <img src="icons/github.svg" alt="github" class="icon" onclick="window.location.href='https://github.com/RayaneMaati'">
+        </div>
+        <div class="desc">I’m the Founder/Developer of QuizByAI, a platform designed to help students prepare for exams through AI-powered quizzes.</div>
+
+        <div class="title">My Story</div>
+        <div class="desc">I’ve always been passionate about technology and education. As a university student myself, I know how overwhelming exam preparation can feel. That’s why I built this app—to make studying smarter, not harder.</div>
+
+        <div class="title">My Mission</div>
+        <div class="desc">My mission is to empower students by providing them with tools that simplify learning and help them succeed in their studies.</div>
+    </div>
+
+    <footer>
+        Any questions? Feel free to reach out at <span>&nbsp;contact@quizbyai.com</span>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="quotes.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.aboutMe{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 0px 150px;
+}
+.aboutMe img{
+    height: 200px;
+    border-radius: 100px;
+    box-shadow: var(--shadow-dark);
+    border: none;
+    margin: 10px;
+}
+.myName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myName .icon{
+    height: 35px;
+    margin-right: -5px;
+    cursor: pointer;
+}
+.myName .icon:hover{
+    opacity: .6;
+}
+.myName .title{
+    margin-bottom: 0px !important;
+}
+
+.aboutMe .title{
+    font-size: 30px;
+    color: var(--main);
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--main);
+    cursor: pointer;
+}
+
+.aboutMe .desc{
+    font-size: 20px;
+    font-weight: 400;
+}
