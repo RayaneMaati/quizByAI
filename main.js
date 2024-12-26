@@ -1,4 +1,3 @@
-const timer = document.querySelector(".timerCount");
 const faqAnswer = document.querySelectorAll(".faqItem .answer");
 const recommandedTopic = document.querySelectorAll(".topicCard div");
 const inp = document.querySelector(".topic input");
@@ -11,6 +10,8 @@ const loadingInterface = document.querySelector(".quizLoad");
 const retryBtn = document.querySelector(".retry");
 const retryBtnImg = document.querySelector(".retry img");
 const choice = document.querySelectorAll(".choice");
+const levelCard = document.querySelectorAll(".level");
+const difficultyHolder =  document.querySelector(".difficulty");
 
 function toggleFaq(i){
     if(faqAnswer[i].style.display == "none"){
@@ -18,10 +19,12 @@ function toggleFaq(i){
     }else{
         faqAnswer[i].style.display = "none";
     }   
+    window.location.href = "#faq";
 }
 
 function fillTopic(i){
     inp.value = recommandedTopic[i].innerText;
+    window.location.href = "#quizSection";
 }
 
 function showQuiz(){
@@ -40,5 +43,18 @@ function showQuiz(){
             generateBtn.style.backgroundColor = "#0390fd";
             generateBtn.innerText = "Generate";
         }, 3000)
+    }
+}
+
+function changeLevel(index){
+    levelCard[index].className += " level-selected";
+    inp.dataset.level = levelCard[index].innerText;
+    // difficultyHolder.innerText = levelCard[index].innerText;
+    for(i = 0; i<levelCard.length; i++){
+        if(i == index){
+            continue;
+        }
+        levelCard[i].className = "level";
+        window.location.href = "#quizSection";
     }
 }

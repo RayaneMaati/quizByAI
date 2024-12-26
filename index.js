@@ -1,4 +1,4 @@
-    const apiKey = "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"; // Replace with your actual OpenAI API key
+    const apiKey = "";
     const endpoint = "https://api.openai.com/v1/chat/completions";
 
     async function fetchQuizQuestion(prompt) {
@@ -39,8 +39,15 @@
       let currentAnswer = "";
 
       generateBtn.addEventListener("click", function(){
+        var level = inp.dataset.level;
+        var subject = inp.value.toLowerCase();
+        var pr = "Generate a quiz question based on the subject " + subject+ " at the "+ level + " difficulty level. The question should focus on diversified topics within the subject while remaining challenging. Provide 4 answer options labeled A, B, C, and D, ensuring that the correct answer is among the options but without explicitly identifying it. Do not exceed 150 tokens"  
+        quizContainer.style.display = "none";
+        loadingInterface.style.display = "flex";
+        backToDefault();
+        difficultyHolder.innerText = level;
         // Directly calling the async function
-        fetchQuizQuestion("Generate a simple quiz question about python. Include 4 Answers (A,B,C,D), make sure that the right answer is included within the options, dont mention the right answer")
+        fetchQuizQuestion(pr)
         .then(quizQuestion => {
           fetchQuizQuestion("You are a highly intelligent quiz solver. I will give you a multiple-choice question, and you must determine the correct answer and respond with only the letter representing the correct choice. Do not explain your reasoning or provide any additional information. Do not add any ponctuation only the letter: "+ quizQuestion)
           .then(ans=>{
@@ -56,11 +63,15 @@
       });
 
       retryBtn.addEventListener("click", function(){
+        var level = inp.dataset.level;
+        var subject = inp.value.toLowerCase();
+        var pr = "Generate a quiz question based on the subject " + subject+ " at the "+ level + " difficulty level. The question should focus on diversified topics within the subject while remaining challenging. Provide 4 answer options labeled A, B, C, and D, ensuring that the correct answer is among the options but without explicitly identifying it. Do not exceed 150 tokens"  
         quizContainer.style.display = "none";
         loadingInterface.style.display = "flex";
         backToDefault();
+        difficultyHolder.innerText = level;
         // Directly calling the async function
-        fetchQuizQuestion("Generate an easy quiz question about python but with diversified topics not too common and challenging. Include 4 Answers (A,B,C,D), make sure that the right answer is included within the options, dont mention the right answer")
+        fetchQuizQuestion(pr)
         .then(quizQuestion => {
           fetchQuizQuestion("You are a highly intelligent quiz solver. I will give you a multiple-choice question, and you must determine the correct answer and respond with only the letter representing the correct choice. Do not explain your reasoning or provide any additional information. Do not add any ponctuation only the letter: "+ quizQuestion)
           .then(ans=>{

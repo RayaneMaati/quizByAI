@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
     <nav>
@@ -35,15 +35,15 @@
 
         <div id="quizSection">
             <div class="levels">
-                <div class="level easy level-selected">
+                <div class="level easy level-selected" onclick="changeLevel(0)">
                     Easy
                 </div>
 
-                <div class="level medium">
+                <div class="level medium" onclick="changeLevel(1)">
                     Medium
                 </div>
 
-                <div class="level hard">
+                <div class="level hard" onclick="changeLevel(2)">
                     Hard
                 </div>
             </div>
@@ -87,7 +87,7 @@
 
             <div class="topic">
                 <h2>Pick the subject you'd like to study :</h2>
-                <input type="text" placeholder="Choose your topic ...">
+                <input type="text" placeholder="Choose your topic ..." data-level="Easy">
                 <button class="generateBtn" onclick="showQuiz()">Generate</button>
             </div>
 
@@ -99,7 +99,7 @@
                 </div>
                 <div class="quizContainer">
                     <div class="title">Quiz Time !</div>
-                    <div class="timer">Time spent: <span class="timerCount">0</span>s</div>
+                    <div style="font-size: 22px;">Difficulty : <span class="difficulty" style="font-weight: 700;">Easy</span></div>
                     <div class="quizContent">
                         <div class="questionHolder">Question: What is the correct syntax to output "Hello World" in Python?
 <br>
@@ -183,8 +183,8 @@
         <img src="icons/persoImg.jpg" alt="The_Coder">
         <div class="myName">
             <div class="title">I'm Rayane Maati</div>
-            <img src="icons/linkedin.svg" alt="linkedin" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/rayane-maati-36093720b/'">
-            <img src="icons/github.svg" alt="github" class="icon" onclick="window.location.href='https://github.com/RayaneMaati'">
+            <img src="icons/linkedin.svg" alt="linkedin" class="icon" onclick="window.open('https://www.linkedin.com/in/rayane-maati-36093720b/')">
+            <img src="icons/github.svg" alt="github" class="icon" onclick="window.open('https://github.com/RayaneMaati')">
         </div>
         <div class="desc">I’m the Founder/Developer of QuizByAI, a platform designed to help students prepare for exams through AI-powered quizzes.</div>
 
@@ -196,7 +196,7 @@
     </div>
 
     <footer>
-        Any questions? Feel free to reach out at <span>&nbsp;contact@quizbyai.com</span>
+        Any questions? Feel free to reach out at <a href="mailto:someone@example.com">&nbsp;contact@quizbyai.com</a>
     </footer>
 
     <script src="main.js"></script>
