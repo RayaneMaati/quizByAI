@@ -1,4 +1,4 @@
-    const apiKey = "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";
+    const apiKey = "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";
     const endpoint = "https://api.openai.com/v1/chat/completions";
 
     async function fetchQuizQuestion(prompt) {
