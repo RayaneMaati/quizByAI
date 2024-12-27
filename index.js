@@ -1,5 +1,5 @@
-const azx = atob("c2stcHJvai1Sb3ZGTkNQUkgyVW1neVhZcXlIcHQ2UlN1RHJEV2pBaGtTQ0tLS2JXUnlpVF9jSU9PZzlZcGdxMV8xME9fejVSVWhoa1FHMkhuYlQzQmxia0ZKdWY3RDJtY1Q2RGszSDhBVTBxZ1l4cXdBdjV1VFhGNWY0V2paRXhzSW9mMWpMTU1veXM5aVQxYkFKMG5Hb0xRSWdsRUt6clBrZ0E=");
-const endpoint = "https://api.openai.com/v1/chat/completions";
+    const azx = atob("c2stcHJvai02V0NHQVRFTmZBWlBpN0xvRUFJWVFjbk55azV6R0x6TnNzU1U4d1ozVXRuUGlUUUtub1hpMmk2ZF83TV9CZFVMRkJVVWwzdU5WM1QzQmxia0ZKWjRQOTVDaFNtd1JacmlYN2hHR3gtUzV1LThPNzFqN05HRUxndDllbHpaOUVQS0FVTEZrQmdzWGg5MHh3S3oybnNicl9rYVYzQUE=");
+    const endpoint = "https://api.openai.com/v1/chat/completions";
 
     async function fetchQuizQuestion(prompt) {
         const headers = {
