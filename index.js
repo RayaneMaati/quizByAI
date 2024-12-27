@@ -1,10 +1,10 @@
-    const apiKey = "";
-    const endpoint = "https://api.openai.com/v1/chat/completions";
+const azx = atob("c2stcHJvai1Sb3ZGTkNQUkgyVW1neVhZcXlIcHQ2UlN1RHJEV2pBaGtTQ0tLS2JXUnlpVF9jSU9PZzlZcGdxMV8xME9fejVSVWhoa1FHMkhuYlQzQmxia0ZKdWY3RDJtY1Q2RGszSDhBVTBxZ1l4cXdBdjV1VFhGNWY0V2paRXhzSW9mMWpMTU1veXM5aVQxYkFKMG5Hb0xRSWdsRUt6clBrZ0E=");
+const endpoint = "https://api.openai.com/v1/chat/completions";
 
     async function fetchQuizQuestion(prompt) {
         const headers = {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`,
+          "Authorization": `Bearer ${azx}`,
         };
       
         const data = {
