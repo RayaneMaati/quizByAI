@@ -25,6 +25,7 @@ function toggleFaq(i){
 function fillTopic(i){
     inp.value = recommandedTopic[i].innerText;
     window.location.href = "#quizSection";
+    window.location.href = "#topic";
 }
 
 function showQuiz(){

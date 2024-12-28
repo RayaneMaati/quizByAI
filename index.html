@@ -21,7 +21,7 @@
         </ul>
     </nav>
 
-    <div>
+    <div id="home">
         <div class="hero">
             <img src="icons/brain.svg" alt="Brain">
             <div class="headLine">Empower Your Brain with AI-Powered Quizzes.</div>
@@ -85,7 +85,7 @@
 
             </div>
 
-            <div class="topic">
+            <div id="topic" class="topic">
                 <h2>Pick the subject you'd like to study :</h2>
                 <input type="text" placeholder="Choose your topic ..." data-level="Easy">
                 <button class="generateBtn" onclick="showQuiz()">Generate</button>
@@ -99,15 +99,9 @@
                 </div>
                 <div class="quizContainer">
                     <div class="title">Quiz Time !</div>
-                    <div style="font-size: 22px;">Difficulty : <span class="difficulty" style="font-weight: 700;">Easy</span></div>
+                    <div class="difficultyHolder" style="font-size: 22px;">Difficulty : <span class="difficulty" style="font-weight: 700;">Easy</span></div>
                     <div class="quizContent">
-                        <div class="questionHolder">Question: What is the correct syntax to output "Hello World" in Python?
-<br>
-                            A) echo("Hello World");
-                            B) print("Hello World")
-                            C) output("Hello World")
-                            D) write("Hello World")
-                        </div>
+                        <div class="questionHolder"></div>
                     </div>
 
                     <div class="quizChoices">
@@ -125,7 +119,7 @@
 
     </div>
 
-    <div id="faq">
+    <div id="faq" >
         <h1>Frequenty Asked Questions</h1>
 
         <div class="faqItem" onclick="toggleFaq(0)">
@@ -196,7 +190,7 @@
     </div>
 
     <footer>
-        Any questions? Feel free to reach out at <a href="mailto:someone@example.com">&nbsp;contact@quizbyai.com</a>
+        <div>Any questions? Feel free to reach out at <a href="mailto:someone@example.com">&nbsp;contact@quizbyai.com</a></div>
     </footer>
 
     <script src="main.js"></script>

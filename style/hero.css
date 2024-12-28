@@ -1,0 +1,122 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #3c4042;
+
+}
+nav h1{
+    cursor: pointer;
+    user-select: none;
+    color: var(--main);
+}
+ul{
+    list-style: none;
+    display: inline-block;
+}
+li{
+    display: inline-block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+li:hover{
+    color: var(--main);
+    font-weight: 700;
+}
+
+.hero{
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    text-align: center;
+    background-color: #3c4042;
+    height: 100vh;
+    margin-top: -50px;
+}
+.hero .headLine{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.hero .subHeadline{
+    font-size: 30px;
+    font-style: italic;
+    opacity: .6;
+}
+.hero img{
+    width: 100px;
+    padding-bottom: 10px;
+}
+.hero button{
+    padding: 10px 50px;
+    margin: 20px 0;
+    color: var(--light);
+    background-color: var(--main-selected);
+    font-family: "Nunito", serif;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+.hero button:hover{
+    box-shadow: var(--shadow-hover)
+}
+
+.quote{
+    display: flex;
+    justify-content: center;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-style: italic;
+    opacity: .75;
+}
+
+@media only screen and (max-width: 650px) {
+    nav{
+        padding: 0px 10px;
+    }
+    nav li{
+        padding-left: 15px;
+        font-size: 18px;   
+    }
+    .hero{
+        font-size: 35px;
+        margin-top: -50px !important;
+    }
+    .hero .subHeadline{
+        font-size: 25px;
+    }
+    .hero img{
+        width: 85px;
+        padding-bottom: 20px;
+    }
+    .hero button, .quote{
+        font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 400px){
+    .hero{
+        font-size: 30px;
+        margin-top: -81px !important;
+    }
+    .hero img{
+        width: 80px;
+        padding-bottom: 20px;
+    }
+    .quote{
+        font-size: 15px;
+    }
+    .hero .subHeadline{
+        font-size: 22px;
+    }
+    ul{
+        text-align: center;
+    }
+  }

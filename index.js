@@ -88,7 +88,6 @@
 
       // const choice = document.querySelectorAll(".choice");
       function checkAnswer(index){
-        console.log(currentAnswer + " : " + choice[index].dataset.value)
         if(choice[index].dataset.value == currentAnswer.toLowerCase()){
           choice[index].style.backgroundColor = "#4BB543";
 
